@@ -3,6 +3,7 @@ import React from "react";
 import PieChart from "../src/Charts/Pie chart";
 import LineChart from "../src/Charts/Line chart";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+import BarChart from "./Charts/Bar chart";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={PieChart}></Route>
           <Route exact path="/line" component={LineChart}></Route>
+          <Route exact path="/bar" component={BarChart}></Route>
         </Switch>
       </BrowserRouter>
     </div>
