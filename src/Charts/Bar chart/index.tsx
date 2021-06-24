@@ -4,7 +4,7 @@ import ReactECharts from "echarts-for-react";
 const BarChart = () => {
   const option = {
     title: {
-      text: "Bar chart",
+      text: "",
       textStyle: {
         color: "#6B66FF",
         fontSize: 16,
@@ -13,10 +13,12 @@ const BarChart = () => {
     tooltip: {},
     xAxis: {
       name: "Day of the week",
-      nameTextStyle: {
-        color: "#6B66FF",
-        fontSize: 16,
-      },
+      // nameTextStyle: {
+      //   color: "#6B66FF",
+      //   fontSize: 16,
+      // },
+      nameLocation: "center",
+      nameGap: 48,
       axisTick: {
         alignWithLabel: false,
       },
@@ -28,14 +30,18 @@ const BarChart = () => {
       axisLabel: {
         show: true,
         fontSize: 16,
-        color: "#CFD1D7",
+        color: "#C2C2DD",
       },
       axisLine: {
         show: false,
       },
     },
     yAxis: {
+      name: "Sales amount",
       show: true,
+      nameRotate: 90,
+      nameLocation: "center",
+      nameGap: 48,
       splitLine: {
         lineStyle: {
           type: "dashed",
@@ -55,19 +61,24 @@ const BarChart = () => {
       },
       max: 50,
     },
+    legend: {
+      orient: "horizontal",
+      right: "center",
+      data: ["product 1", "product 2"],
+    },
     series: [
       {
         type: "bar",
-        name: "",
+        name: "product 1",
         data: [25, 20, 20, 20, 25, 30, 26],
-        barWidth: 20,
+        barWidth: 10,
         barCateGoryGap: "10%",
       },
       {
         type: "bar",
-        name: "",
+        name: "product 2",
         data: [20, 20, 30, 30, 30, 15, 20],
-        barWidth: 20,
+        barWidth: 10,
         barCateGoryGap: "10%",
       },
     ],
